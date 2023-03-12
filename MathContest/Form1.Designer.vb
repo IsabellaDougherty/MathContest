@@ -22,18 +22,19 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.NameTextBox = New System.Windows.Forms.TextBox()
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.AgeTextBox = New System.Windows.Forms.TextBox()
         Me.AgeLabel = New System.Windows.Forms.Label()
         Me.GradeTextBox = New System.Windows.Forms.TextBox()
         Me.GradeLabel = New System.Windows.Forms.Label()
-        Me.AdditionCheckBox = New System.Windows.Forms.CheckBox()
-        Me.SubtractionCheckBox = New System.Windows.Forms.CheckBox()
-        Me.MultiplicationCheckBox = New System.Windows.Forms.CheckBox()
-        Me.DivisionCheckBox = New System.Windows.Forms.CheckBox()
         Me.InformationGroupBox = New System.Windows.Forms.GroupBox()
         Me.ProblemTypeGroupBox = New System.Windows.Forms.GroupBox()
+        Me.DivisionRadioButton = New System.Windows.Forms.RadioButton()
+        Me.MultiplicationRadioButton = New System.Windows.Forms.RadioButton()
+        Me.SubtractionRadioButton = New System.Windows.Forms.RadioButton()
+        Me.AdditionRadioButton = New System.Windows.Forms.RadioButton()
         Me.MathProblemTypeLabel = New System.Windows.Forms.Label()
         Me.MathProblemGroupBox = New System.Windows.Forms.GroupBox()
         Me.StudentsAnswerLabel = New System.Windows.Forms.Label()
@@ -47,10 +48,15 @@ Partial Class Form1
         Me.SummeryButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.SubmitButton = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.OkayButton = New System.Windows.Forms.Button()
+        Me.AllInformationPanel = New System.Windows.Forms.Panel()
+        Me.NumericalAgeWarningLabel = New System.Windows.Forms.Label()
         Me.InformationGroupBox.SuspendLayout()
         Me.ProblemTypeGroupBox.SuspendLayout()
         Me.MathProblemGroupBox.SuspendLayout()
         Me.ButtonsGroupBox.SuspendLayout()
+        Me.AllInformationPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'NameTextBox
@@ -58,7 +64,8 @@ Partial Class Form1
         Me.NameTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.NameTextBox.Location = New System.Drawing.Point(7, 64)
         Me.NameTextBox.Name = "NameTextBox"
-        Me.NameTextBox.Size = New System.Drawing.Size(100, 23)
+        Me.NameTextBox.PlaceholderText = "Enter Student's Name"
+        Me.NameTextBox.Size = New System.Drawing.Size(136, 23)
         Me.NameTextBox.TabIndex = 0
         '
         'NameLabel
@@ -75,8 +82,9 @@ Partial Class Form1
         Me.AgeTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.AgeTextBox.Location = New System.Drawing.Point(7, 114)
         Me.AgeTextBox.Name = "AgeTextBox"
-        Me.AgeTextBox.Size = New System.Drawing.Size(100, 23)
-        Me.AgeTextBox.TabIndex = 2
+        Me.AgeTextBox.PlaceholderText = "Enter Student's Age"
+        Me.AgeTextBox.Size = New System.Drawing.Size(136, 23)
+        Me.AgeTextBox.TabIndex = 1
         '
         'AgeLabel
         '
@@ -92,8 +100,9 @@ Partial Class Form1
         Me.GradeTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.GradeTextBox.Location = New System.Drawing.Point(7, 169)
         Me.GradeTextBox.Name = "GradeTextBox"
-        Me.GradeTextBox.Size = New System.Drawing.Size(100, 23)
-        Me.GradeTextBox.TabIndex = 4
+        Me.GradeTextBox.PlaceholderText = "Enter Student's Grade"
+        Me.GradeTextBox.Size = New System.Drawing.Size(136, 23)
+        Me.GradeTextBox.TabIndex = 2
         '
         'GradeLabel
         '
@@ -103,50 +112,6 @@ Partial Class Form1
         Me.GradeLabel.Size = New System.Drawing.Size(45, 15)
         Me.GradeLabel.TabIndex = 5
         Me.GradeLabel.Text = "Grade"
-        '
-        'AdditionCheckBox
-        '
-        Me.AdditionCheckBox.AutoSize = True
-        Me.AdditionCheckBox.Font = New System.Drawing.Font("Constantia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.AdditionCheckBox.Location = New System.Drawing.Point(5, 63)
-        Me.AdditionCheckBox.Name = "AdditionCheckBox"
-        Me.AdditionCheckBox.Size = New System.Drawing.Size(102, 27)
-        Me.AdditionCheckBox.TabIndex = 6
-        Me.AdditionCheckBox.Text = "Addition"
-        Me.AdditionCheckBox.UseVisualStyleBackColor = True
-        '
-        'SubtractionCheckBox
-        '
-        Me.SubtractionCheckBox.AutoSize = True
-        Me.SubtractionCheckBox.Font = New System.Drawing.Font("Constantia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.SubtractionCheckBox.Location = New System.Drawing.Point(5, 96)
-        Me.SubtractionCheckBox.Name = "SubtractionCheckBox"
-        Me.SubtractionCheckBox.Size = New System.Drawing.Size(126, 27)
-        Me.SubtractionCheckBox.TabIndex = 7
-        Me.SubtractionCheckBox.Text = "Subtraction"
-        Me.SubtractionCheckBox.UseVisualStyleBackColor = True
-        '
-        'MultiplicationCheckBox
-        '
-        Me.MultiplicationCheckBox.AutoSize = True
-        Me.MultiplicationCheckBox.Font = New System.Drawing.Font("Constantia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.MultiplicationCheckBox.Location = New System.Drawing.Point(5, 129)
-        Me.MultiplicationCheckBox.Name = "MultiplicationCheckBox"
-        Me.MultiplicationCheckBox.Size = New System.Drawing.Size(146, 27)
-        Me.MultiplicationCheckBox.TabIndex = 8
-        Me.MultiplicationCheckBox.Text = "Multiplication"
-        Me.MultiplicationCheckBox.UseVisualStyleBackColor = True
-        '
-        'DivisionCheckBox
-        '
-        Me.DivisionCheckBox.AutoSize = True
-        Me.DivisionCheckBox.Font = New System.Drawing.Font("Constantia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.DivisionCheckBox.Location = New System.Drawing.Point(5, 162)
-        Me.DivisionCheckBox.Name = "DivisionCheckBox"
-        Me.DivisionCheckBox.Size = New System.Drawing.Size(96, 27)
-        Me.DivisionCheckBox.TabIndex = 9
-        Me.DivisionCheckBox.Text = "Division"
-        Me.DivisionCheckBox.UseVisualStyleBackColor = True
         '
         'InformationGroupBox
         '
@@ -160,7 +125,7 @@ Partial Class Form1
         Me.InformationGroupBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.InformationGroupBox.Location = New System.Drawing.Point(9, 12)
         Me.InformationGroupBox.Name = "InformationGroupBox"
-        Me.InformationGroupBox.Size = New System.Drawing.Size(129, 198)
+        Me.InformationGroupBox.Size = New System.Drawing.Size(149, 198)
         Me.InformationGroupBox.TabIndex = 10
         Me.InformationGroupBox.TabStop = False
         Me.InformationGroupBox.Text = "Student's Information"
@@ -168,23 +133,69 @@ Partial Class Form1
         'ProblemTypeGroupBox
         '
         Me.ProblemTypeGroupBox.BackColor = System.Drawing.Color.PowderBlue
+        Me.ProblemTypeGroupBox.Controls.Add(Me.DivisionRadioButton)
+        Me.ProblemTypeGroupBox.Controls.Add(Me.MultiplicationRadioButton)
+        Me.ProblemTypeGroupBox.Controls.Add(Me.SubtractionRadioButton)
+        Me.ProblemTypeGroupBox.Controls.Add(Me.AdditionRadioButton)
         Me.ProblemTypeGroupBox.Controls.Add(Me.MathProblemTypeLabel)
-        Me.ProblemTypeGroupBox.Controls.Add(Me.DivisionCheckBox)
-        Me.ProblemTypeGroupBox.Controls.Add(Me.MultiplicationCheckBox)
-        Me.ProblemTypeGroupBox.Controls.Add(Me.SubtractionCheckBox)
-        Me.ProblemTypeGroupBox.Controls.Add(Me.AdditionCheckBox)
         Me.ProblemTypeGroupBox.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.ProblemTypeGroupBox.Location = New System.Drawing.Point(147, 12)
+        Me.ProblemTypeGroupBox.Location = New System.Drawing.Point(164, 12)
         Me.ProblemTypeGroupBox.Name = "ProblemTypeGroupBox"
-        Me.ProblemTypeGroupBox.Size = New System.Drawing.Size(170, 198)
+        Me.ProblemTypeGroupBox.Size = New System.Drawing.Size(242, 198)
         Me.ProblemTypeGroupBox.TabIndex = 11
         Me.ProblemTypeGroupBox.TabStop = False
+        '
+        'DivisionRadioButton
+        '
+        Me.DivisionRadioButton.AutoSize = True
+        Me.DivisionRadioButton.Font = New System.Drawing.Font("Constantia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.DivisionRadioButton.Location = New System.Drawing.Point(36, 146)
+        Me.DivisionRadioButton.Name = "DivisionRadioButton"
+        Me.DivisionRadioButton.Size = New System.Drawing.Size(95, 27)
+        Me.DivisionRadioButton.TabIndex = 14
+        Me.DivisionRadioButton.Text = "Division"
+        Me.DivisionRadioButton.UseVisualStyleBackColor = True
+        '
+        'MultiplicationRadioButton
+        '
+        Me.MultiplicationRadioButton.AutoSize = True
+        Me.MultiplicationRadioButton.Font = New System.Drawing.Font("Constantia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.MultiplicationRadioButton.Location = New System.Drawing.Point(36, 113)
+        Me.MultiplicationRadioButton.Name = "MultiplicationRadioButton"
+        Me.MultiplicationRadioButton.Size = New System.Drawing.Size(145, 27)
+        Me.MultiplicationRadioButton.TabIndex = 13
+        Me.MultiplicationRadioButton.Text = "Multiplication"
+        Me.MultiplicationRadioButton.UseVisualStyleBackColor = True
+        '
+        'SubtractionRadioButton
+        '
+        Me.SubtractionRadioButton.AutoSize = True
+        Me.SubtractionRadioButton.Font = New System.Drawing.Font("Constantia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.SubtractionRadioButton.Location = New System.Drawing.Point(36, 80)
+        Me.SubtractionRadioButton.Name = "SubtractionRadioButton"
+        Me.SubtractionRadioButton.Size = New System.Drawing.Size(125, 27)
+        Me.SubtractionRadioButton.TabIndex = 12
+        Me.SubtractionRadioButton.Text = "Subtraction"
+        Me.SubtractionRadioButton.UseVisualStyleBackColor = True
+        '
+        'AdditionRadioButton
+        '
+        Me.AdditionRadioButton.AutoSize = True
+        Me.AdditionRadioButton.Checked = True
+        Me.AdditionRadioButton.Font = New System.Drawing.Font("Constantia", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AdditionRadioButton.Location = New System.Drawing.Point(36, 47)
+        Me.AdditionRadioButton.Name = "AdditionRadioButton"
+        Me.AdditionRadioButton.Size = New System.Drawing.Size(101, 27)
+        Me.AdditionRadioButton.TabIndex = 11
+        Me.AdditionRadioButton.TabStop = True
+        Me.AdditionRadioButton.Text = "Addition"
+        Me.AdditionRadioButton.UseVisualStyleBackColor = True
         '
         'MathProblemTypeLabel
         '
         Me.MathProblemTypeLabel.AutoSize = True
         Me.MathProblemTypeLabel.Font = New System.Drawing.Font("Constantia", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.MathProblemTypeLabel.Location = New System.Drawing.Point(0, 21)
+        Me.MathProblemTypeLabel.Location = New System.Drawing.Point(36, 18)
         Me.MathProblemTypeLabel.Name = "MathProblemTypeLabel"
         Me.MathProblemTypeLabel.Size = New System.Drawing.Size(168, 21)
         Me.MathProblemTypeLabel.TabIndex = 10
@@ -202,7 +213,7 @@ Partial Class Form1
         Me.MathProblemGroupBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.MathProblemGroupBox.Location = New System.Drawing.Point(9, 216)
         Me.MathProblemGroupBox.Name = "MathProblemGroupBox"
-        Me.MathProblemGroupBox.Size = New System.Drawing.Size(308, 143)
+        Me.MathProblemGroupBox.Size = New System.Drawing.Size(397, 143)
         Me.MathProblemGroupBox.TabIndex = 12
         Me.MathProblemGroupBox.TabStop = False
         Me.MathProblemGroupBox.Text = "Current Math Problem"
@@ -210,7 +221,7 @@ Partial Class Form1
         'StudentsAnswerLabel
         '
         Me.StudentsAnswerLabel.AutoSize = True
-        Me.StudentsAnswerLabel.Location = New System.Drawing.Point(101, 82)
+        Me.StudentsAnswerLabel.Location = New System.Drawing.Point(254, 31)
         Me.StudentsAnswerLabel.Name = "StudentsAnswerLabel"
         Me.StudentsAnswerLabel.Size = New System.Drawing.Size(120, 15)
         Me.StudentsAnswerLabel.TabIndex = 5
@@ -219,15 +230,16 @@ Partial Class Form1
         'StudentsAnswerTextBox
         '
         Me.StudentsAnswerTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.StudentsAnswerTextBox.Location = New System.Drawing.Point(6, 100)
+        Me.StudentsAnswerTextBox.Location = New System.Drawing.Point(225, 49)
         Me.StudentsAnswerTextBox.Name = "StudentsAnswerTextBox"
-        Me.StudentsAnswerTextBox.Size = New System.Drawing.Size(295, 23)
-        Me.StudentsAnswerTextBox.TabIndex = 4
+        Me.StudentsAnswerTextBox.PlaceholderText = "Enter student's answer here"
+        Me.StudentsAnswerTextBox.Size = New System.Drawing.Size(166, 23)
+        Me.StudentsAnswerTextBox.TabIndex = 9
         '
         'SecondNumberLabel
         '
         Me.SecondNumberLabel.AutoSize = True
-        Me.SecondNumberLabel.Location = New System.Drawing.Point(177, 28)
+        Me.SecondNumberLabel.Location = New System.Drawing.Point(53, 91)
         Me.SecondNumberLabel.Name = "SecondNumberLabel"
         Me.SecondNumberLabel.Size = New System.Drawing.Size(112, 15)
         Me.SecondNumberLabel.TabIndex = 3
@@ -236,15 +248,16 @@ Partial Class Form1
         'SecondNumberTextBox
         '
         Me.SecondNumberTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.SecondNumberTextBox.Location = New System.Drawing.Point(160, 49)
+        Me.SecondNumberTextBox.Location = New System.Drawing.Point(3, 109)
         Me.SecondNumberTextBox.Name = "SecondNumberTextBox"
-        Me.SecondNumberTextBox.Size = New System.Drawing.Size(142, 23)
-        Me.SecondNumberTextBox.TabIndex = 2
+        Me.SecondNumberTextBox.PlaceholderText = "Enter second number of problem"
+        Me.SecondNumberTextBox.Size = New System.Drawing.Size(205, 23)
+        Me.SecondNumberTextBox.TabIndex = 8
         '
         'FirstNumberLabel
         '
         Me.FirstNumberLabel.AutoSize = True
-        Me.FirstNumberLabel.Location = New System.Drawing.Point(33, 28)
+        Me.FirstNumberLabel.Location = New System.Drawing.Point(53, 31)
         Me.FirstNumberLabel.Name = "FirstNumberLabel"
         Me.FirstNumberLabel.Size = New System.Drawing.Size(96, 15)
         Me.FirstNumberLabel.TabIndex = 1
@@ -253,10 +266,11 @@ Partial Class Form1
         'FirstNumberTextBox
         '
         Me.FirstNumberTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.FirstNumberTextBox.Location = New System.Drawing.Point(7, 49)
+        Me.FirstNumberTextBox.Location = New System.Drawing.Point(3, 49)
         Me.FirstNumberTextBox.Name = "FirstNumberTextBox"
-        Me.FirstNumberTextBox.Size = New System.Drawing.Size(142, 23)
-        Me.FirstNumberTextBox.TabIndex = 0
+        Me.FirstNumberTextBox.PlaceholderText = "Enter first number of problem"
+        Me.FirstNumberTextBox.Size = New System.Drawing.Size(205, 23)
+        Me.FirstNumberTextBox.TabIndex = 7
         '
         'ButtonsGroupBox
         '
@@ -265,7 +279,7 @@ Partial Class Form1
         Me.ButtonsGroupBox.Controls.Add(Me.SummeryButton)
         Me.ButtonsGroupBox.Controls.Add(Me.ClearButton)
         Me.ButtonsGroupBox.Controls.Add(Me.SubmitButton)
-        Me.ButtonsGroupBox.Location = New System.Drawing.Point(323, 12)
+        Me.ButtonsGroupBox.Location = New System.Drawing.Point(412, 12)
         Me.ButtonsGroupBox.Name = "ButtonsGroupBox"
         Me.ButtonsGroupBox.Size = New System.Drawing.Size(208, 347)
         Me.ButtonsGroupBox.TabIndex = 13
@@ -274,59 +288,99 @@ Partial Class Form1
         'ExitButton
         '
         Me.ExitButton.BackColor = System.Drawing.Color.SteelBlue
+        Me.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ExitButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ExitButton.Location = New System.Drawing.Point(7, 262)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(189, 74)
-        Me.ExitButton.TabIndex = 3
+        Me.ExitButton.TabIndex = 13
         Me.ExitButton.Text = "Exit"
         Me.ExitButton.UseVisualStyleBackColor = False
         '
         'SummeryButton
         '
         Me.SummeryButton.BackColor = System.Drawing.Color.SteelBlue
+        Me.SummeryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.SummeryButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.SummeryButton.Location = New System.Drawing.Point(7, 182)
         Me.SummeryButton.Name = "SummeryButton"
         Me.SummeryButton.Size = New System.Drawing.Size(189, 74)
-        Me.SummeryButton.TabIndex = 2
+        Me.SummeryButton.TabIndex = 12
         Me.SummeryButton.Text = "Summery"
         Me.SummeryButton.UseVisualStyleBackColor = False
         '
         'ClearButton
         '
         Me.ClearButton.BackColor = System.Drawing.Color.SteelBlue
+        Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ClearButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ClearButton.Location = New System.Drawing.Point(7, 96)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(189, 74)
-        Me.ClearButton.TabIndex = 1
+        Me.ClearButton.TabIndex = 11
         Me.ClearButton.Text = "Clear"
         Me.ClearButton.UseVisualStyleBackColor = False
         '
         'SubmitButton
         '
         Me.SubmitButton.BackColor = System.Drawing.Color.SteelBlue
+        Me.SubmitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.SubmitButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.SubmitButton.Location = New System.Drawing.Point(7, 13)
         Me.SubmitButton.Name = "SubmitButton"
         Me.SubmitButton.Size = New System.Drawing.Size(189, 74)
-        Me.SubmitButton.TabIndex = 0
+        Me.SubmitButton.TabIndex = 10
         Me.SubmitButton.Text = "Submit"
         Me.SubmitButton.UseVisualStyleBackColor = False
+        '
+        'OkayButton
+        '
+        Me.OkayButton.BackColor = System.Drawing.Color.Silver
+        Me.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.OkayButton.Font = New System.Drawing.Font("Constantia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.OkayButton.Location = New System.Drawing.Point(341, 40)
+        Me.OkayButton.Name = "OkayButton"
+        Me.OkayButton.Size = New System.Drawing.Size(56, 32)
+        Me.OkayButton.TabIndex = 14
+        Me.OkayButton.Text = "Okay"
+        Me.ToolTip1.SetToolTip(Me.OkayButton, "Click this to return to form")
+        Me.OkayButton.UseVisualStyleBackColor = False
+        '
+        'AllInformationPanel
+        '
+        Me.AllInformationPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.AllInformationPanel.Controls.Add(Me.OkayButton)
+        Me.AllInformationPanel.Controls.Add(Me.NumericalAgeWarningLabel)
+        Me.AllInformationPanel.Font = New System.Drawing.Font("Constantia", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.AllInformationPanel.Location = New System.Drawing.Point(626, 108)
+        Me.AllInformationPanel.Name = "AllInformationPanel"
+        Me.AllInformationPanel.Size = New System.Drawing.Size(409, 77)
+        Me.AllInformationPanel.TabIndex = 14
+        Me.AllInformationPanel.Visible = False
+        '
+        'NumericalAgeWarningLabel
+        '
+        Me.NumericalAgeWarningLabel.AutoSize = True
+        Me.NumericalAgeWarningLabel.Font = New System.Drawing.Font("Constantia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.NumericalAgeWarningLabel.Location = New System.Drawing.Point(0, 14)
+        Me.NumericalAgeWarningLabel.Name = "NumericalAgeWarningLabel"
+        Me.NumericalAgeWarningLabel.Size = New System.Drawing.Size(407, 23)
+        Me.NumericalAgeWarningLabel.TabIndex = 0
+        Me.NumericalAgeWarningLabel.Text = "All student information boxes must be filled!"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CadetBlue
-        Me.ClientSize = New System.Drawing.Size(543, 367)
+        Me.ClientSize = New System.Drawing.Size(990, 575)
+        Me.Controls.Add(Me.AllInformationPanel)
         Me.Controls.Add(Me.ButtonsGroupBox)
         Me.Controls.Add(Me.MathProblemGroupBox)
         Me.Controls.Add(Me.ProblemTypeGroupBox)
         Me.Controls.Add(Me.InformationGroupBox)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "MathContest"
         Me.InformationGroupBox.ResumeLayout(False)
         Me.InformationGroupBox.PerformLayout()
         Me.ProblemTypeGroupBox.ResumeLayout(False)
@@ -334,6 +388,8 @@ Partial Class Form1
         Me.MathProblemGroupBox.ResumeLayout(False)
         Me.MathProblemGroupBox.PerformLayout()
         Me.ButtonsGroupBox.ResumeLayout(False)
+        Me.AllInformationPanel.ResumeLayout(False)
+        Me.AllInformationPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -344,10 +400,6 @@ Partial Class Form1
     Friend WithEvents AgeLabel As Label
     Friend WithEvents GradeTextBox As TextBox
     Friend WithEvents GradeLabel As Label
-    Friend WithEvents AdditionCheckBox As CheckBox
-    Friend WithEvents SubtractionCheckBox As CheckBox
-    Friend WithEvents MultiplicationCheckBox As CheckBox
-    Friend WithEvents DivisionCheckBox As CheckBox
     Friend WithEvents InformationGroupBox As GroupBox
     Friend WithEvents ProblemTypeGroupBox As GroupBox
     Friend WithEvents MathProblemTypeLabel As Label
@@ -363,4 +415,12 @@ Partial Class Form1
     Friend WithEvents SummeryButton As Button
     Friend WithEvents ClearButton As Button
     Friend WithEvents SubmitButton As Button
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents AllInformationPanel As Panel
+    Friend WithEvents OkayButton As Button
+    Friend WithEvents NumericalAgeWarningLabel As Label
+    Friend WithEvents DivisionRadioButton As RadioButton
+    Friend WithEvents MultiplicationRadioButton As RadioButton
+    Friend WithEvents SubtractionRadioButton As RadioButton
+    Friend WithEvents AdditionRadioButton As RadioButton
 End Class
