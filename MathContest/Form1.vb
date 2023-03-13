@@ -8,7 +8,7 @@
 Public Class Form1
     Dim studentsName As String
     Dim studentsAge As String
-    Dim studentsGrade As Integer
+    Dim studentsGrade As String
 
     Private Sub NameTextBox_TextChanged(sender As Object, e As EventArgs) Handles NameTextBox.TextChanged
         studentsName = NameTextBox.Text
@@ -16,28 +16,21 @@ Public Class Form1
     Private Sub AgeTextBox_TextChanged(sender As Object, e As EventArgs) Handles AgeTextBox.TextChanged
         studentsAge = AgeTextBox.Text
     End Sub
-    Private Sub OkayButton_Click(sender As Object, e As EventArgs) Handles OkayButton.Click
-        AllInformationPanel.Visible = False
+    Private Sub OkayButton_Click(sender As Object, e As EventArgs)
+
     End Sub
     Private Sub GradeTextBox_TextChanged(sender As Object, e As EventArgs) Handles GradeTextBox.TextChanged
         studentsGrade = GradeTextBox.Text
     End Sub
-
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
-        If studentsName = "" Or studentsAge = "" Or studentsGrade = "" Then
-            AllInformationPanel.Visible = True
-            If studentsName = "" Then
-
-            End If
-            If studentsAge = "" Then
-
-            End If
-            If studentsGrade = "" Then
-
-            End If
+        If Len(studentsName) = 0 Or Len(studentsAge) = 0 Or Len(studentsGrade) = 0 Then
+            MsgBox("You must fill in all sections of the student's information!", vbOKOnly)
         End If
     End Sub
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+        studentsName = ""
+        studentsGrade = ""
+        studentsAge = ""
         NameTextBox.Clear()
         AgeTextBox.Clear()
         GradeTextBox.Clear()
@@ -59,11 +52,6 @@ Public Class Form1
         ElseIf SubtractionRadioButton.Checked = False Then
             SubtractionRadioButton.Checked = True
         End If
-
-        'AdditionRadioButton.Checked = False
-        'MultiplicationRadioButton.Checked = False
-        'DivisionRadioButton.Checked = False
-        ''SubtractionRadioButton.Checked = True
     End Sub
 
     Private Sub MultiplicationRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles MultiplicationRadioButton.CheckedChanged
@@ -80,10 +68,6 @@ Public Class Form1
             MultiplicationRadioButton.Checked = True
 
         End If
-        'AdditionRadioButton.Checked = False
-        'SubtractionRadioButton.Checked = False
-        'DivisionRadioButton.Checked = False
-        ''MultiplicationRadioButton.Checked = True
     End Sub
 
     Private Sub DivisionRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles DivisionRadioButton.CheckedChanged
@@ -99,31 +83,21 @@ Public Class Form1
         ElseIf DivisionRadioButton.Checked = False Then
             DivisionRadioButton.Checked = True
         End If
-        'AdditionRadioButton.Checked = False
-        'SubtractionRadioButton.Checked = False
-        'MultiplicationRadioButton.Checked = False
-        ''DivisionRadioButton.Checked = True
     End Sub
 
     Private Sub AdditionRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles AdditionRadioButton.CheckedChanged
-
-
         If SubtractionRadioButton.Checked Then
             SubtractionRadioButton.Checked = False
-
         ElseIf MultiplicationRadioButton.Checked Then
             MultiplicationRadioButton.Checked = False
-
         ElseIf DivisionRadioButton.Checked Then
             DivisionRadioButton.Checked = False
-
         ElseIf AdditionRadioButton.Checked = False Then
             AdditionRadioButton.Checked = True
-
         End If
-        'SubtractionRadioButton.Checked = False
-        'MultiplicationRadioButton.Checked = False
-        'DivisionRadioButton.Checked = False
-        ''AdditionRadioButton.Checked = True
+    End Sub
+
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        End
     End Sub
 End Class

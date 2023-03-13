@@ -49,14 +49,10 @@ Partial Class Form1
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.SubmitButton = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.OkayButton = New System.Windows.Forms.Button()
-        Me.AllInformationPanel = New System.Windows.Forms.Panel()
-        Me.NumericalAgeWarningLabel = New System.Windows.Forms.Label()
         Me.InformationGroupBox.SuspendLayout()
         Me.ProblemTypeGroupBox.SuspendLayout()
         Me.MathProblemGroupBox.SuspendLayout()
         Me.ButtonsGroupBox.SuspendLayout()
-        Me.AllInformationPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'NameTextBox
@@ -333,48 +329,12 @@ Partial Class Form1
         Me.SubmitButton.Text = "Submit"
         Me.SubmitButton.UseVisualStyleBackColor = False
         '
-        'OkayButton
-        '
-        Me.OkayButton.BackColor = System.Drawing.Color.Silver
-        Me.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.OkayButton.Font = New System.Drawing.Font("Constantia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.OkayButton.Location = New System.Drawing.Point(341, 40)
-        Me.OkayButton.Name = "OkayButton"
-        Me.OkayButton.Size = New System.Drawing.Size(56, 32)
-        Me.OkayButton.TabIndex = 14
-        Me.OkayButton.Text = "Okay"
-        Me.ToolTip1.SetToolTip(Me.OkayButton, "Click this to return to form")
-        Me.OkayButton.UseVisualStyleBackColor = False
-        '
-        'AllInformationPanel
-        '
-        Me.AllInformationPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.AllInformationPanel.Controls.Add(Me.OkayButton)
-        Me.AllInformationPanel.Controls.Add(Me.NumericalAgeWarningLabel)
-        Me.AllInformationPanel.Font = New System.Drawing.Font("Constantia", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.AllInformationPanel.Location = New System.Drawing.Point(626, 108)
-        Me.AllInformationPanel.Name = "AllInformationPanel"
-        Me.AllInformationPanel.Size = New System.Drawing.Size(409, 77)
-        Me.AllInformationPanel.TabIndex = 14
-        Me.AllInformationPanel.Visible = False
-        '
-        'NumericalAgeWarningLabel
-        '
-        Me.NumericalAgeWarningLabel.AutoSize = True
-        Me.NumericalAgeWarningLabel.Font = New System.Drawing.Font("Constantia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.NumericalAgeWarningLabel.Location = New System.Drawing.Point(0, 14)
-        Me.NumericalAgeWarningLabel.Name = "NumericalAgeWarningLabel"
-        Me.NumericalAgeWarningLabel.Size = New System.Drawing.Size(407, 23)
-        Me.NumericalAgeWarningLabel.TabIndex = 0
-        Me.NumericalAgeWarningLabel.Text = "All student information boxes must be filled!"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CadetBlue
-        Me.ClientSize = New System.Drawing.Size(990, 575)
-        Me.Controls.Add(Me.AllInformationPanel)
+        Me.ClientSize = New System.Drawing.Size(932, 368)
         Me.Controls.Add(Me.ButtonsGroupBox)
         Me.Controls.Add(Me.MathProblemGroupBox)
         Me.Controls.Add(Me.ProblemTypeGroupBox)
@@ -388,8 +348,6 @@ Partial Class Form1
         Me.MathProblemGroupBox.ResumeLayout(False)
         Me.MathProblemGroupBox.PerformLayout()
         Me.ButtonsGroupBox.ResumeLayout(False)
-        Me.AllInformationPanel.ResumeLayout(False)
-        Me.AllInformationPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -416,9 +374,6 @@ Partial Class Form1
     Friend WithEvents ClearButton As Button
     Friend WithEvents SubmitButton As Button
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents AllInformationPanel As Panel
-    Friend WithEvents OkayButton As Button
-    Friend WithEvents NumericalAgeWarningLabel As Label
     Friend WithEvents DivisionRadioButton As RadioButton
     Friend WithEvents MultiplicationRadioButton As RadioButton
     Friend WithEvents SubtractionRadioButton As RadioButton
