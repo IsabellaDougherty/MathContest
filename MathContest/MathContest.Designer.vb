@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class MathContest
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -118,6 +118,7 @@ Partial Class Form1
         Me.InformationGroupBox.Controls.Add(Me.AgeTextBox)
         Me.InformationGroupBox.Controls.Add(Me.NameLabel)
         Me.InformationGroupBox.Controls.Add(Me.NameTextBox)
+        Me.InformationGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.InformationGroupBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.InformationGroupBox.Location = New System.Drawing.Point(9, 12)
         Me.InformationGroupBox.Name = "InformationGroupBox"
@@ -134,6 +135,7 @@ Partial Class Form1
         Me.ProblemTypeGroupBox.Controls.Add(Me.SubtractionRadioButton)
         Me.ProblemTypeGroupBox.Controls.Add(Me.AdditionRadioButton)
         Me.ProblemTypeGroupBox.Controls.Add(Me.MathProblemTypeLabel)
+        Me.ProblemTypeGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ProblemTypeGroupBox.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ProblemTypeGroupBox.Location = New System.Drawing.Point(164, 12)
         Me.ProblemTypeGroupBox.Name = "ProblemTypeGroupBox"
@@ -206,6 +208,7 @@ Partial Class Form1
         Me.MathProblemGroupBox.Controls.Add(Me.SecondNumberTextBox)
         Me.MathProblemGroupBox.Controls.Add(Me.FirstNumberLabel)
         Me.MathProblemGroupBox.Controls.Add(Me.FirstNumberTextBox)
+        Me.MathProblemGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MathProblemGroupBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.MathProblemGroupBox.Location = New System.Drawing.Point(9, 216)
         Me.MathProblemGroupBox.Name = "MathProblemGroupBox"
@@ -246,8 +249,8 @@ Partial Class Form1
         Me.SecondNumberTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.SecondNumberTextBox.Location = New System.Drawing.Point(3, 109)
         Me.SecondNumberTextBox.Name = "SecondNumberTextBox"
-        Me.SecondNumberTextBox.PlaceholderText = "Enter second number of problem"
-        Me.SecondNumberTextBox.Size = New System.Drawing.Size(205, 23)
+        Me.SecondNumberTextBox.PlaceholderText = "The second number will appear here"
+        Me.SecondNumberTextBox.Size = New System.Drawing.Size(216, 23)
         Me.SecondNumberTextBox.TabIndex = 8
         '
         'FirstNumberLabel
@@ -264,8 +267,8 @@ Partial Class Form1
         Me.FirstNumberTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.FirstNumberTextBox.Location = New System.Drawing.Point(3, 49)
         Me.FirstNumberTextBox.Name = "FirstNumberTextBox"
-        Me.FirstNumberTextBox.PlaceholderText = "Enter first number of problem"
-        Me.FirstNumberTextBox.Size = New System.Drawing.Size(205, 23)
+        Me.FirstNumberTextBox.PlaceholderText = "The first number will appear here"
+        Me.FirstNumberTextBox.Size = New System.Drawing.Size(216, 23)
         Me.FirstNumberTextBox.TabIndex = 7
         '
         'ButtonsGroupBox
@@ -275,6 +278,7 @@ Partial Class Form1
         Me.ButtonsGroupBox.Controls.Add(Me.SummeryButton)
         Me.ButtonsGroupBox.Controls.Add(Me.ClearButton)
         Me.ButtonsGroupBox.Controls.Add(Me.SubmitButton)
+        Me.ButtonsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonsGroupBox.Location = New System.Drawing.Point(412, 12)
         Me.ButtonsGroupBox.Name = "ButtonsGroupBox"
         Me.ButtonsGroupBox.Size = New System.Drawing.Size(208, 347)
@@ -296,6 +300,7 @@ Partial Class Form1
         'SummeryButton
         '
         Me.SummeryButton.BackColor = System.Drawing.Color.SteelBlue
+        Me.SummeryButton.Enabled = False
         Me.SummeryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.SummeryButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.SummeryButton.Location = New System.Drawing.Point(7, 182)
@@ -308,6 +313,7 @@ Partial Class Form1
         'ClearButton
         '
         Me.ClearButton.BackColor = System.Drawing.Color.SteelBlue
+        Me.ClearButton.Enabled = False
         Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ClearButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ClearButton.Location = New System.Drawing.Point(7, 96)
@@ -320,6 +326,7 @@ Partial Class Form1
         'SubmitButton
         '
         Me.SubmitButton.BackColor = System.Drawing.Color.SteelBlue
+        Me.SubmitButton.Enabled = False
         Me.SubmitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.SubmitButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.SubmitButton.Location = New System.Drawing.Point(7, 13)
@@ -331,10 +338,12 @@ Partial Class Form1
         '
         'Form1
         '
+        Me.AcceptButton = Me.SubmitButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CadetBlue
-        Me.ClientSize = New System.Drawing.Size(932, 368)
+        Me.CancelButton = Me.ClearButton
+        Me.ClientSize = New System.Drawing.Size(634, 368)
         Me.Controls.Add(Me.ButtonsGroupBox)
         Me.Controls.Add(Me.MathProblemGroupBox)
         Me.Controls.Add(Me.ProblemTypeGroupBox)
