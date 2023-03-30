@@ -12,8 +12,8 @@ Public Class MathContest
     Dim first As Integer
     Dim second As Integer
     Dim temp As Integer
-    Dim correct As Integer
-    Dim answer As Integer
+    Dim correct As Decimal
+    Dim answer As Decimal
     Dim totalCorrect As Integer
     Dim totalQuestions As Integer
     Dim answeredCorrectly As Boolean
@@ -97,8 +97,7 @@ Public Class MathContest
                 correct = first * second
             ElseIf DivisionRadioButton.Checked = True Then
                 correct = first / second
-            Else
-                'MsgBox("You must select a function.")
+                correct = Math.Round(correct, 3)
             End If
 
         End If
@@ -111,22 +110,25 @@ Public Class MathContest
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
 
         Try
-            answer = CInt(StudentsAnswerTextBox.Text)
+            answer = CDec(StudentsAnswerTextBox.Text)
+            answer = Math.Round(answer, 3)
             totalQuestions += 1
+            NameTextBox.Enabled = False
+            AgeTextBox.Enabled = False
+            GradeTextBox.Enabled = False
+            If answer = correct Then
+                totalCorrect += 1
+                MsgBox("Congratulations! Your answer is correct!")
+            Else
+                MsgBox($"Incorrect. The correct answer was: {correct}")
+            End If
+            StudentsAnswerTextBox.Text = ""
+            NumberGen()
         Catch ex As Exception
             MsgBox("You must enter the answer as numbers, not letters.")
             StudentsAnswerTextBox.Text = ""
             StudentsAnswerTextBox.Focus()
         End Try
-
-        If answer = correct Then
-            totalCorrect += 1
-            MsgBox("Congratulations! Your answer is correct!")
-        Else
-            MsgBox($"Incorrect. The correct answer was: {correct}")
-        End If
-        StudentsAnswerTextBox.Text = ""
-        NumberGen()
     End Sub
 
     Private Sub SummeryButton_Click(sender As Object, e As EventArgs) Handles SummeryButton.Click
@@ -139,6 +141,12 @@ Their current score based off this is: {totalCorrect}  / {totalQuestions}")
         studentsName = ""
         studentsGrade = Nothing
         studentsAge = Nothing
+        totalCorrect = 0
+        totalQuestions = 0
+        NameTextBox.Enabled = True
+        AgeTextBox.Enabled = True
+        GradeTextBox.Enabled = True
+        AdditionRadioButton.Checked = True
         NameTextBox.Clear()
         AgeTextBox.Clear()
         GradeTextBox.Clear()
@@ -147,6 +155,7 @@ Their current score based off this is: {totalCorrect}  / {totalQuestions}")
         StudentsAnswerTextBox.Clear()
         SubmitButton.Enabled = False
         SummeryButton.Enabled = False
+        ClearButton.Enabled = False
     End Sub
 
     'Checks for if any of the information textboxes are empty. If one is defaults back to the addition radio button. If not the radio
@@ -177,9 +186,6 @@ Their current score based off this is: {totalCorrect}  / {totalQuestions}")
             AdditionRadioButton.Checked = True
         Else
             NumberGen()
-            'If MultiplicationRadioButton.Checked = False Then
-            '    MultiplicationRadioButton.Checked = True
-            'End If
             If AdditionRadioButton.Checked = True Then
                 AdditionRadioButton.Checked = False
             ElseIf SubtractionRadioButton.Checked = True Then
@@ -201,9 +207,6 @@ Their current score based off this is: {totalCorrect}  / {totalQuestions}")
             AdditionRadioButton.Checked = True
         Else
             NumberGen()
-            'If DivisionRadioButton.Checked = False Then
-            '    DivisionRadioButton.Checked = True
-            'End If
             If AdditionRadioButton.Checked = True Then
                 AdditionRadioButton.Checked = False
             ElseIf SubtractionRadioButton.Checked = True Then
@@ -234,9 +237,6 @@ Their current score based off this is: {totalCorrect}  / {totalQuestions}")
             MsgBox("You must fill in all sections of the student's information!", vbOKOnly)
         Else
             NumberGen()
-            'If AdditionRadioButton.Checked = True Then
-            '    AdditionRadioButton.Checked = False
-            'End If
             If DivisionRadioButton.Checked = True Then
                 DivisionRadioButton.Checked = False
             ElseIf SubtractionRadioButton.Checked = True Then
@@ -249,7 +249,15 @@ Their current score based off this is: {totalCorrect}  / {totalQuestions}")
             SubmitButton.Enabled = True
             SummeryButton.Enabled = True
         End If
-            happened = True
+        happened = True
+    End Sub
+    Private Sub StudentsAnswerTextBox_KeyPress(sender As Object, e As KeyEventArgs) Handles StudentsAnswerTextBox.KeyDown
+        If e.KeyCode = Keys.Add Then
+            SummeryButton.PerformClick()
+            StudentsAnswerTextBox.Text = ""
+        ElseIf e.KeyCode = Keys.Delete Then
+            ExitButton.PerformClick()
+        End If
     End Sub
 
     'Ends the runtime

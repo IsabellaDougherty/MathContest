@@ -246,6 +246,7 @@ Partial Class MathContest
         '
         'SecondNumberTextBox
         '
+        Me.SecondNumberTextBox.Enabled = False
         Me.SecondNumberTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.SecondNumberTextBox.Location = New System.Drawing.Point(3, 109)
         Me.SecondNumberTextBox.Name = "SecondNumberTextBox"
@@ -264,6 +265,7 @@ Partial Class MathContest
         '
         'FirstNumberTextBox
         '
+        Me.FirstNumberTextBox.Enabled = False
         Me.FirstNumberTextBox.Font = New System.Drawing.Font("Constantia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.FirstNumberTextBox.Location = New System.Drawing.Point(3, 49)
         Me.FirstNumberTextBox.Name = "FirstNumberTextBox"
@@ -288,55 +290,59 @@ Partial Class MathContest
         'ExitButton
         '
         Me.ExitButton.BackColor = System.Drawing.Color.SteelBlue
-        Me.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ExitButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ExitButton.Location = New System.Drawing.Point(7, 262)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(189, 74)
         Me.ExitButton.TabIndex = 13
-        Me.ExitButton.Text = "Exit"
+        Me.ExitButton.Text = "&Exit"
+        Me.ToolTip1.SetToolTip(Me.ExitButton, "Click here to exit the program (or press alt E or delete)")
         Me.ExitButton.UseVisualStyleBackColor = False
         '
         'SummeryButton
         '
         Me.SummeryButton.BackColor = System.Drawing.Color.SteelBlue
         Me.SummeryButton.Enabled = False
-        Me.SummeryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.SummeryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SummeryButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.SummeryButton.Location = New System.Drawing.Point(7, 182)
         Me.SummeryButton.Name = "SummeryButton"
         Me.SummeryButton.Size = New System.Drawing.Size(189, 74)
         Me.SummeryButton.TabIndex = 12
-        Me.SummeryButton.Text = "Summery"
+        Me.SummeryButton.Text = "&Summery"
+        Me.ToolTip1.SetToolTip(Me.SummeryButton, "Click here for a summery of the student's work (or press alt S or the + button)")
         Me.SummeryButton.UseVisualStyleBackColor = False
         '
         'ClearButton
         '
         Me.ClearButton.BackColor = System.Drawing.Color.SteelBlue
         Me.ClearButton.Enabled = False
-        Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ClearButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ClearButton.Location = New System.Drawing.Point(7, 96)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(189, 74)
         Me.ClearButton.TabIndex = 11
         Me.ClearButton.Text = "Clear"
+        Me.ToolTip1.SetToolTip(Me.ClearButton, "Click here to clear all information (or press esc).")
         Me.ClearButton.UseVisualStyleBackColor = False
         '
         'SubmitButton
         '
         Me.SubmitButton.BackColor = System.Drawing.Color.SteelBlue
         Me.SubmitButton.Enabled = False
-        Me.SubmitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.SubmitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SubmitButton.Font = New System.Drawing.Font("Constantia", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.SubmitButton.Location = New System.Drawing.Point(7, 13)
         Me.SubmitButton.Name = "SubmitButton"
         Me.SubmitButton.Size = New System.Drawing.Size(189, 74)
         Me.SubmitButton.TabIndex = 10
         Me.SubmitButton.Text = "Submit"
+        Me.ToolTip1.SetToolTip(Me.SubmitButton, "Click here to submit the student's answer (or press enter)")
         Me.SubmitButton.UseVisualStyleBackColor = False
         '
-        'Form1
+        'MathContest
         '
         Me.AcceptButton = Me.SubmitButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -348,7 +354,7 @@ Partial Class MathContest
         Me.Controls.Add(Me.MathProblemGroupBox)
         Me.Controls.Add(Me.ProblemTypeGroupBox)
         Me.Controls.Add(Me.InformationGroupBox)
-        Me.Name = "Form1"
+        Me.Name = "MathContest"
         Me.Text = "MathContest"
         Me.InformationGroupBox.ResumeLayout(False)
         Me.InformationGroupBox.PerformLayout()
