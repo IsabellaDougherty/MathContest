@@ -251,6 +251,8 @@ Their current score based off this is: {totalCorrect}  / {totalQuestions}")
         End If
         happened = True
     End Sub
+
+    'Makes it so when the focus is in the answering text box the + or delete buttons can be pressed to trigger the summery or exit the application
     Private Sub StudentsAnswerTextBox_KeyPress(sender As Object, e As KeyEventArgs) Handles StudentsAnswerTextBox.KeyDown
         If e.KeyCode = Keys.Add Then
             SummeryButton.PerformClick()
